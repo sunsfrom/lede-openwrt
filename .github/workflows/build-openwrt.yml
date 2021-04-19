@@ -62,6 +62,7 @@ jobs:
         ln -sf /workdir/openwrt $GITHUB_WORKSPACE/openwrt
 
     - name: Load OpenClash
+      working-directory: /workdir
       run: |
         cd openwrt
         mkdir package/luci-app-openclash
@@ -73,7 +74,9 @@ jobs:
         git branch --set-upstream-to=origin/master master
 
     - name: Load vssr
+      working-directory: /workdir
       run: |
+        cd openwrt
         cd package/lean
         git clone https://github.com/jerrykuku/lua-maxminddb.git
         git clone https://github.com/jerrykuku/luci-app-vssr.git
