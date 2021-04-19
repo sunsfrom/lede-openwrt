@@ -85,7 +85,6 @@ jobs:
         git clone https://github.com/jerrykuku/luci-theme-argon.git 
 
     - name: Load custom feeds
-      working-directory: /workdir
       run: |
         [ -e $FEEDS_CONF ] && mv $FEEDS_CONF openwrt/feeds.conf.default
         chmod +x $DIY_P1_SH
