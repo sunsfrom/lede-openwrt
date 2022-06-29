@@ -71,12 +71,12 @@ jobs:
         $GITHUB_WORKSPACE/$DIY_P1_SH
     - name: Update feeds
       run: cd openwrt && ./scripts/feeds update -a
-    - name: update hello
-      run: cd openwrt && ./scripts/feeds update helloworld
+ #   - name: update hello
+ #     run: cd openwrt && ./scripts/feeds update helloworld
     - name: Install feeds
       run: cd openwrt && ./scripts/feeds install -a
-    - name: install hello
-      run: cd openwrt && ./scripts/feeds install -a -f -p helloworld
+ #   - name: install hello
+ #     run: cd openwrt && ./scripts/feeds install -a -f -p helloworld
 
     - name: Load custom configuration
       run: |
