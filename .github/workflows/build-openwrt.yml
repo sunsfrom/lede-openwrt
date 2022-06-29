@@ -77,7 +77,11 @@ jobs:
       run: cd openwrt && ./scripts/feeds install -a
  #   - name: install hello
  #     run: cd openwrt && ./scripts/feeds install -a -f -p helloworld
-
+    - name: Add hello
+      run: |
+        cd openwrt/package/lean/
+        git clone https://github.com/jerrykuku/lua-maxminddb.git
+        git clone https://github.com/jerrykuku/luci-app-vssr.git
     - name: Load custom configuration
       run: |
         [ -e files ] && mv files openwrt/files
